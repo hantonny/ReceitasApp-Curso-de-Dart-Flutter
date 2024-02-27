@@ -8,7 +8,7 @@ import '../models/meal.dart';
 class TabsScreen extends StatefulWidget {
   final List<Meal> favoriteMeals;
 
-  const TabsScreen(this.favoriteMeals);
+  const TabsScreen(this.favoriteMeals, {super.key});
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
@@ -46,7 +46,7 @@ class _TabsScreenState extends State<TabsScreen> {
           _screens[_selectedScreeIndex]['title'] as String,
         ),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: _screens[_selectedScreeIndex]['screen'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,

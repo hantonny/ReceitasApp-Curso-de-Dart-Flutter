@@ -6,17 +6,14 @@ import '../utils/app_routes.dart';
 class MealItem extends StatelessWidget {
   final Meal meal;
 
-  MealItem(this.meal);
+  const MealItem(this.meal, {super.key});
 
   void _selectMeal(context) {
     Navigator.of(context)
         .pushNamed(AppRoutes.MEAL_DETAIL, arguments: meal)
         .then((result) {
       if (result == null) {
-        print('Sem resultado');
-      } else {
-        print('O nome da refeição é $result.');
-      }
+      } else {}
     });
   }
 
@@ -69,7 +66,7 @@ class MealItem extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[

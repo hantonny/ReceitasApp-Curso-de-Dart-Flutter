@@ -8,7 +8,7 @@ class SettingsScreen extends StatefulWidget {
   final Settings settings;
   final Function(Settings) onSettingsChanged;
 
-  const SettingsScreen(this.settings, this.onSettingsChanged);
+  const SettingsScreen(this.settings, this.onSettingsChanged, {super.key});
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
@@ -18,7 +18,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     settings = widget.settings;
   }
@@ -46,11 +45,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
         appBar: AppBar(
           title: const Text('Configurações'),
         ),
-        drawer: MainDrawer(),
+        drawer: const MainDrawer(),
         body: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Text(
                 'Configurações',
                 style: Theme.of(context).textTheme.titleMedium,

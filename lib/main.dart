@@ -22,7 +22,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Settings settings = Settings();
   List<Meal> _availableMeals = dummyMeals;
-  List<Meal> _favoriteMeals = [];
+  final List<Meal> _favoriteMeals = [];
 
   void _filterMeals(Settings settings) {
     setState(() {
@@ -61,15 +61,17 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
-          primarySwatch: Colors.pink,
-          hintColor: Colors.amber,
-          fontFamily: 'Raleway',
-          canvasColor: const Color.fromRGBO(255, 254, 229, 1),
-          textTheme: ThemeData.light().textTheme.copyWith(
-                  titleMedium: const TextStyle(
+        primarySwatch: Colors.pink,
+        hintColor: Colors.amber,
+        fontFamily: 'Raleway',
+        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+        textTheme: ThemeData.light().textTheme.copyWith(
+              titleMedium: const TextStyle(
                 fontSize: 20,
                 fontFamily: 'RobotoCondensed',
-              ))),
+              ),
+            ),
+      ),
       routes: {
         AppRoutes.HOME: (ctx) => TabsScreen(_favoriteMeals),
         AppRoutes.CATEGORIES_MEALS: (ctx) =>

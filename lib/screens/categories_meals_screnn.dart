@@ -8,7 +8,7 @@ import '../models/meal.dart';
 class CategoriesMealsScrenn extends StatelessWidget {
   final List<Meal> meals;
 
-  const CategoriesMealsScrenn(this.meals);
+  const CategoriesMealsScrenn(this.meals, {super.key});
 
   @override
   Widget build(BuildContext context) {
